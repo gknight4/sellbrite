@@ -1,0 +1,23 @@
+<div class="container"
+  style="filter: blur(0px); opacity: 1.0; pointer-events: auto"
+  [ngStyle]="divStyle"
+>
+  <div class="row" *ngFor="let appRow of apLines">
+    <div class="col-lg-3" *ngFor="let product of appRow">
+      <app-item
+        [appItemName] = "product.name"
+        [appItemPrice] = "product.price"
+        [appItemImage] = "product.filename"
+        [appItemId] = "product.id"
+        (addToCart)="addItem($event)"
+      ></app-item>
+    </div>
+  </div>
+</div>
+<app-cart
+  *ngIf="showCart"
+  [ap]="ap"
+  [cart]="cart"
+  [total]="total"
+  (deleteItem)="deleteItem($event)">
+</app-cart>

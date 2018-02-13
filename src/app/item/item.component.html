@@ -1,0 +1,21 @@
+<div class="text-center" style="width: 200px; background-color: white;
+outline: 5px solid lightgray; margin-bottom: 50px;"> <!--width: 400px; height: 320px;-->
+<img class="img-responsive" src="assets/images/{{appItemImage}}" />
+<p style="font-family: engravers; font-size: 12px; margin-top: 15px;">
+  {{appItemName}}
+</p>
+<p style="font-family: engravers; font-size: 20px;">
+  ${{appItemPrice / 100}}
+</p>
+<button type="button" class="btn btn-secondary"
+  style="margin-bottom: 25px;"
+  (click)="this.addToCart.emit($event.target.id)"
+  id={{appItemId}}>Add to Cart</button>
+</div>
+
+<!--
+"filename": "618328744.png",
+"price": 5127,
+"name": "Mens Fashion Shirts"
+
+-->
